@@ -1,0 +1,39 @@
+{
+    "cluster": {
+        "name": "cluster"
+    },
+    "api" : {
+        "port" : 5050,
+        "restart_stale" : "false"
+    },
+    "repositories" : {
+        "url" : [
+            "http://repo1.domain.com/loc/hadoop",
+            "http://repo2.domain.com/loc",
+            "http://alternate.domain.com/backup/repo"
+        ],
+        "dir" : [ "/root/hadooprepo" ]
+    },
+    "network" : {
+        "use_infiniband" : "false",
+        "selection_subnet" : "5.32.128.10/21",
+        "http_proxy" : "http://my.proxy.server.com:80",
+        "https_proxy" : "http://mysecure.proxy.server.com:80"
+    },
+    "security" : {
+        "database_auth_enabled" : "true",
+        "impersonation_enabled" : "true",
+        "impersonation_usehosts" : "true",
+        "impersonation_blacklist" : "hdfs,hive"
+    },
+    "kerberos" : {
+        "principal" : "oracle/mycluster@MY.DOMAIN.COM",
+        "keytab" : "/home/oracle/security/oracle.keytab",
+        "hdfs-principal" : "hdfs/mycluster@MY.DOMAIN.COM",
+        "hdfs-keytab" : "/home/hdfs/security/hdfs.keytab"
+    },
+    "memory" : {
+        "min_hard_limit" : 16384,
+        "max_percentage" : 30
+    }
+}
